@@ -1,0 +1,49 @@
+-- Create database
+CREATE DATABASE inventory_system;
+
+-- Use the database
+USE inventory_system;
+
+-- Create inventory table
+CREATE TABLE inventory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Create sales table
+CREATE TABLE sales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_id INT NOT NULL,
+    quantity INT NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES inventory(id)
+);
+
+-- Create orders table
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create order_details table
+CREATE TABLE order_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    item_id INT NOT NULL,
+    quantity INT NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY (item_id) REFERENCES inventory(id)
+);
+
+--USER LOG IN
+USE inventory_system;
+
+-- Create the 'users' table
+CREATE TABLE IF NOT EXISTS users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,  -- Unique user ID
+    username VARCHAR(50) NOT NULL UNIQUE,    -- Username, must be unique
+    password VARCHAR(255) NOT NULL,          -- User password (hashed)
+    role VARCHAR(20) NOT NULL                -- Role (e.g., 'admin' or 'staff')
+);

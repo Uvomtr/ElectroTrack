@@ -1,0 +1,22 @@
+ALTER TABLE sales ADD sale_date DATETIME; -- Adding a new column 'sale_date' to the 'sales' table to store the date and time of each sale
+
+SELECT * FROM sales WHERE 1; -- Retrieving all records from the 'sales' table to verify the new column
+
+DESCRIBE sales;
+
+
+INSERT INTO sales (item_id, quantity, sale_date) 
+VALUES (123, 2, NOW()); -- Note: Make sure that item_id (123) exists in the 'inventory' table
+
+
+SELECT * FROM inventory WHERE id = 123; -- Checking if the item with id 123 exists in the 'inventory' table
+
+
+INSERT INTO inventory (id, item_name, price) 
+VALUES (123, 'Item Name', 25.00); -- This adds a new item with a specific id, name, and price
+
+INSERT INTO sales (item_id, quantity, sale_date) 
+VALUES (123, 2, NOW());
+
+
+SELECT * FROM sales WHERE 1; -- Retrieving all records from the 'sales' table to confirm the new sale was added successfully

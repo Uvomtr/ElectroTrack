@@ -2,7 +2,7 @@
 
 Overview
 
-ElectroTrack is a powerful inventory management system with an integrated point-of-sale (POS) and customer ordering system. Designed to streamline inventory tracking and sales operations, ElectroTrack provides businesses with efficient stock management, real-time reporting, and seamless customer transactions.
+ElectroTrack is a inventory management system with an integrated point-of-sale (POS) and customer ordering system. Designed to streamline inventory tracking and sales operations, ElectroTrack provides businesses with efficient stock management, real-time reporting, and seamless customer transactions.
 
 Features
 

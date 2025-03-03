@@ -14,7 +14,7 @@ Customer Ordering System: Allow customers to place orders through an online or o
 
 Real-time Reporting: Generate sales reports, stock summaries, and transaction logs.
 
-User Management: Role-based access for admins, salespersons, and managers.
+User Management: Role-based access for admins, staffs and customers.
 
 Multi-department Support: Manage inventory across different store sections or warehouses.
 
